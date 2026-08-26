@@ -1,2 +1,2 @@
 # NavalTech
-Empresa para prestar serviço naval e Tecnologia da IA
+Empresa para prestar serviço Naval e Tecnologia da IA
