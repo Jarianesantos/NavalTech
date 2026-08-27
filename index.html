@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <img src="technaval_logo.svg" alt="Portfolio Logo" class="logo" />
+    <ul>
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#home">Página Inicial</a></li>
+      <li><a href="#projects">Projetos</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="#login" class="login-btn">Login</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <svg viewBox="0 0 1584 396" width="100%" height="100%">
+      <use href="technaval_logo.svg#technaval"/>
+    </svg>
+    <h2>Cifra de César • Anéis Criptográficos • Software Engineering</h2>
+  </section>
+
+  <section class="section" id="home">
+    <h2>Página Inicial</h2>
+    <p> Bem-vindo ao portfolio. Aqui apresento projetos de engenharia de software, criptografia e design naval inspirado em sistemas de comunicação seguros.</p>
+  </section>
+
+  <section class="section" id="about">
+    <h2>Sobre</h2>
+    <p>
+      Visual que integra a <strong>Cifra de César (ROT 3)</strong> :<code>TechNaval</code> → <code>Wkhfkqdydo</code>,
+      anéis giratórios animados e um design estilo terminal retro.
+    </p>
+  </section>
+
+  <section class="section" id="projects">
+    <h2>Projetos</h2>
+    <p>Portfólio estático gerado com Python + HTML5/CSS3. Futuramente adicionarei mais projetos e um formulário de contato.</p>
+  </section>
+
+  <section class="section" id="reference">
+    <h2>Referência de design</h2>
+    <p>Inspirado no portfólio de embarcações do <a href="https://wilsonsons.com.br/pt-br/estaleiro/portfolio-de-embarcacoes/" target="_blank">Wilson Sons</a>.</p>
+    <div class="grid">
+      <article class="card">
+        <h3>Projeto Navio</h3>
+        <p>Descrição resumo de um projeto de estaleiro focado em navios de apoio offshore.</p>
+      </article>
+      <article class="card">
+        <h3>Reboque Marítimo</h3>
+        <p>Visão geral dos serviços de reboque e assistência naval.</p>
+      </article>
+      <article class="card">
+        <h3>Construção Customizada</h3>
+        <p>Exemplo de layout de cards ilustrando construção de embarcações sob medida.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="servicos">
+    <h2>Portfólio de serviços</h2>
+    <p>Serviços destacados do portfolio:</p>
+    <ul>
+      <li>Desenvolvimento de APIs REST</li>
+    </ul>
+  </section>
+
+<footer>
+  <p>Portfólio pessoal – <a href="https://github.com/Jarianesantos/NavalTech">GitHub</a></p>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const loginBtn = document.querySelector('.login-btn');
+    
+    // Cria o modal de login
+    const loginModal = document.createElement('div');
+    loginModal.className = 'login-modal';
+    loginModal.innerHTML = `
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" placeholder="Sua senha" required>
+          </div>
+          <button type="submit" class="submit-btn">Entrar</button>
+          <div id="loginMessage" class="login-message"></div>
+        </form>
+      </div>
+    `;
+    document.body.appendChild(loginModal);
+    
+    // Estilos do modal
+    const style = document.createElement('style');
+    style.textContent = `
+      .login-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+      .modal-content {
+        background-color: var(--card);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        width: 100%;
+        max-width: 400px;
+        position: relative;
+        color: var(--fg);
+      }
+      .close-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--muted);
+      }
+      .close-modal:hover {
+        color: var(--fg);
+      }
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--muted);
+      }
+      .form-group input {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #30363d;
+        border-radius: 0.375rem;
+        background-color: #0d1117;
+        color: var(--fg);
+        font-size: 1rem;
+      }
+      .form-group input:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+      .submit-btn {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: var(--accent);
+        color: #0d1117;
+        border: none;
+        border-radius: 0.375rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      .submit-btn:hover {
+        background-color: #4cd651;
+      }
+      .login-message {
+        margin-top: 1rem;
+        text-align: center;
+        padding: 0.5rem;
+        border-radius: 0.375rem;
+        display: none;
+      }
+      .login-message.success {
+        background-color: rgba(63, 185, 80, 0.2);
+        color: var(--accent);
+        display: block;
+      }
+      .login-message.error {
+        background-color: rgba(248, 81, 73, 0.2);
+        color: #f85149;
+        display: block;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    // Eventos do modal
+    loginBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      loginModal.style.display = 'flex';
+    });
+    
+    loginModal.querySelector('.close-modal').addEventListener('click', () => {
+      loginModal.style.display = 'none';
+    });
+    
+    window.addEventListener('click', (e) => {
+      if (e.target === loginModal) {
+        loginModal.style.display = 'none';
+      }
+    });
+    
+    // Validação do login
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const messageDiv = document.getElementById('loginMessage');
+      
+      try {
+        const response = await fetch('/api/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, password })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          messageDiv.textContent = data.message;
+          messageDiv.className = 'login-message success';
+          
+          // Redireciona após 2 segundos
+          setTimeout(() => {
+            loginModal.style.display = 'none';
+            alert('Login realizado com sucesso!');
+          }, 2000);
+        } else {
+          messageDiv.textContent = data.message;
+          messageDiv.className = 'login-message error';
+        }
+      } catch (error) {
+        messageDiv.textContent = 'Erro ao conectar ao servidor.';
+        messageDiv.className = 'login-message error';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
