@@ -85,24 +85,51 @@
   document.addEventListener('DOMContentLoaded', () => {
     const loginBtn = document.querySelector('.login-btn');
     
-    // Cria o modal de login
+    // Cria o modal de login/cadastro
     const loginModal = document.createElement('div');
     loginModal.className = 'login-modal';
     loginModal.innerHTML = `
       <div class="modal-content">
         <span class="close-modal">&times;</span>
-        <h2>Login</h2>
-        <form id="loginForm">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="login">Login</button>
+          <button class="tab-btn" data-tab="register">Cadastro</button>
+        </div>
+        
+        <!-- Formulário de Login -->
+        <form id="loginForm" class="tab-content active">
           <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" name="email" placeholder="seu@email.com" required>
           </div>
           <div class="form-group">
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" placeholder="Sua senha" required>
+            <label for="loginPassword">Senha:</label>
+            <input type="password" id="loginPassword" name="password" placeholder="Sua senha" required>
           </div>
           <button type="submit" class="submit-btn">Entrar</button>
           <div id="loginMessage" class="login-message"></div>
+        </form>
+        
+        <!-- Formulário de Cadastro -->
+        <form id="registerForm" class="tab-content">
+          <div class="form-group">
+            <label for="regName">Nome completo:</label>
+            <input type="text" id="regName" name="name" placeholder="Seu nome" required>
+          </div>
+          <div class="form-group">
+            <label for="regEmail">Email:</label>
+            <input type="email" id="regEmail" name="email" placeholder="seu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Senha:</label>
+            <input type="password" id="regPassword" name="password" placeholder="Mínimo 6 caracteres" required minlength="6">
+          </div>
+          <div class="form-group">
+            <label for="regConfirmPassword">Confirmar senha:</label>
+            <input type="password" id="regConfirmPassword" name="confirmPassword" placeholder="Repita a senha" required>
+          </div>
+          <button type="submit" class="submit-btn">Cadastrar</button>
+          <div id="registerMessage" class="login-message"></div>
         </form>
       </div>
     `;
@@ -142,6 +169,36 @@
       }
       .close-modal:hover {
         color: var(--fg);
+      }
+      .tabs {
+        display: flex;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid #30363d;
+      }
+      .tab-btn {
+        flex: 1;
+        padding: 0.75rem;
+        background: none;
+        border: none;
+        color: var(--muted);
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: color 0.2s, border-color 0.2s;
+        border-bottom: 2px solid transparent;
+      }
+      .tab-btn:hover {
+        color: var(--fg);
+      }
+      .tab-btn.active {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+      }
+      .tab-content {
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
       }
       .form-group {
         margin-bottom: 1rem;
@@ -199,6 +256,19 @@
     `;
     document.head.appendChild(style);
     
+    // Eventos das tabs
+    const tabs = loginModal.querySelectorAll('.tab-btn');
+    const tabContents = loginModal.querySelectorAll('.tab-content');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tabContents.forEach(tc => tc.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(`${tab.dataset.tab}Form`).classList.add('active');
+      });
+    });
+    
     // Eventos do modal
     loginBtn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -219,8 +289,8 @@
     document.getElementById('loginForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
       const messageDiv = document.getElementById('loginMessage');
       
       try {
@@ -238,10 +308,59 @@
           messageDiv.textContent = data.message;
           messageDiv.className = 'login-message success';
           
-          // Redireciona após 2 segundos
           setTimeout(() => {
             loginModal.style.display = 'none';
             alert('Login realizado com sucesso!');
+          }, 2000);
+        } else {
+          messageDiv.textContent = data.message;
+          messageDiv.className = 'login-message error';
+        }
+      } catch (error) {
+        messageDiv.textContent = 'Erro ao conectar ao servidor.';
+        messageDiv.className = 'login-message error';
+      }
+    });
+    
+    // Validação do cadastro
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('regName').value;
+      const email = document.getElementById('regEmail').value;
+      const password = document.getElementById('regPassword').value;
+      const confirmPassword = document.getElementById('regConfirmPassword').value;
+      const messageDiv = document.getElementById('registerMessage');
+      
+      if (password !== confirmPassword) {
+        messageDiv.textContent = 'As senhas não coincidem.';
+        messageDiv.className = 'login-message error';
+        return;
+      }
+      
+      try {
+        const response = await fetch('/api/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ name, email, password, confirmPassword })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          messageDiv.textContent = data.message;
+          messageDiv.className = 'login-message success';
+          
+          // Limpa o formulário
+          document.getElementById('registerForm').reset();
+          
+          setTimeout(() => {
+            // Muda para a aba de login
+            tabs[0].click();
+            document.getElementById('loginMessage').textContent = 'Cadastro realizado! Faça login.';
+            document.getElementById('loginMessage').className = 'login-message success';
           }, 2000);
         } else {
           messageDiv.textContent = data.message;
