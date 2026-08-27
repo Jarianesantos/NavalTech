@@ -10,17 +10,18 @@ Este é um portfólio web completo desenvolvido para apresentar projetos e servi
 
 - **Design Responsivo** - Layout adaptável para desktop, tablet e mobile
 - **Tema Marítimo** - Paleta de cores inspirada no oceano (azul-marinho, branco gelo)
-- **Sistema de Autenticação** - Login e cadastro de usuários
+- **Sistema de Autenticação** - Login e cadastro de usuários com senhas hasheadas (bcrypt)
 - **Notificações por Email** - Alertas automáticos via nodemailer
+- **Formulário de Contato** - Envio de mensagens diretamente por email
 - **Projetos do GitHub** - Integração com repositórios reais
-- **Animações Suaves** - Transições e efeitos visuais modernos
+- **Animações Suaves** - Barras de habilidades animadas no scroll
 - **Menu Mobile** - Navegação responsiva com hamburger menu
 
 ## Tecnologias Utilizadas
 
 - **Frontend:** HTML5, CSS3, JavaScript
 - **Backend:** Node.js, Express 5
-- **Banco de Dados:** SQLite (via better-sqlite3)
+- **Segurança:** bcrypt (hash de senhas), dotenv (variáveis de ambiente)
 - **Email:** Nodemailer
 - **Fonte:** Times New Roman
 - **Ícones:** Font Awesome 6
@@ -29,13 +30,16 @@ Este é um portfólio web completo desenvolvido para apresentar projetos e servi
 
 ```
 NavalTech/
-├── index.html              # Página principal
-├── style.css               # Estilos CSS
+├── public/                 # Arquivos estáticos
+│   ├── index.html          # Página principal
+│   ├── style.css           # Estilos CSS
+│   └── technaval_logo.svg  # Logotipo SVG
 ├── server.js               # Backend Node.js/Express
+├── .env                    # Variáveis de ambiente (não commitado)
+├── .gitignore              # Arquivos ignorados pelo Git
 ├── package.json            # Dependências
 ├── gerar_projetos.py       # Gerador de projetos (Python)
 ├── projetos_gerados.html   # HTML gerado pelo script
-├── technaval_logo.svg      # Logotipo SVG
 └── README.md               # Este arquivo
 ```
 
@@ -57,16 +61,27 @@ cd NavalTech
 # Instalar dependências
 npm install
 
+# Criar arquivo .env (copiar do exemplo)
+cp .env.example .env
+
 # Iniciar o servidor
 npm start
 ```
 
 Acesse: [http://localhost:3000](http://localhost:3000)
 
-### Credenciais de Login
+### Arquivo .env
 
-- **Email:** jarianenaval@gmail.com
-- **Senha:** QVOUQHYP
+O arquivo `.env` contém as configurações sensíveis e não deve ser commitado. Crie um com as seguintes variáveis:
+
+```env
+PORT=3000
+EMAIL_USER=seu-email@gmail.com
+EMAIL_PASS=sua-senha-de-app
+LOGIN_EMAIL=seu-email@gmail.com
+LOGIN_PASSWORD=sua-senha
+LOGIN_NAME=Seu Nome
+```
 
 ## Scripts Úteis
 
@@ -98,6 +113,14 @@ npm install
 # Iniciar em produção
 npm start
 ```
+
+## Segurança
+
+- ✅ Senhas hasheadas com bcrypt
+- ✅ Variáveis de ambiente em arquivo `.env`
+- ✅ `.env` não é commitado no Git
+- ✅ Arquivos estáticos servidos apenas da pasta `public/`
+- ✅ Validação de entrada em todos os endpoints
 
 ## Projetos em Destaque
 

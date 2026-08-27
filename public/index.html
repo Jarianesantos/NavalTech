@@ -443,32 +443,6 @@
       </article>
 
     </div>
-            <span>Maps API</span>
-          </div>
-        </div>
-      </article>
-      
-      <article class="project-card">
-        <div class="project-image">
-          <div class="project-placeholder">
-            <i class="fas fa-shopping-cart"></i>
-          </div>
-          <div class="project-overlay">
-            <a href="#contato" class="project-link">Ver Detalhes</a>
-          </div>
-        </div>
-        <div class="project-info">
-          <span class="project-category">E-commerce</span>
-          <h3>Marine Shop</h3>
-          <p>Plataforma de e-commerce para equipamentos navais com pagamento integrado.</p>
-          <div class="project-tech">
-            <span>Next.js</span>
-            <span>Stripe</span>
-            <span>MongoDB</span>
-          </div>
-        </div>
-      </article>
-    </div>
   </div>
 </section>
 
@@ -485,15 +459,15 @@
         <div class="skill-items">
           <div class="skill-item">
             <span class="skill-name">HTML5 / CSS3</span>
-            <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="95%" style="width: 0%"></div></div>
           </div>
           <div class="skill-item">
             <span class="skill-name">JavaScript / TypeScript</span>
-            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="90%" style="width: 0%"></div></div>
           </div>
           <div class="skill-item">
             <span class="skill-name">React / Next.js</span>
-            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="85%" style="width: 0%"></div></div>
           </div>
         </div>
       </div>
@@ -503,15 +477,15 @@
         <div class="skill-items">
           <div class="skill-item">
             <span class="skill-name">Node.js / Express</span>
-            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="90%" style="width: 0%"></div></div>
           </div>
           <div class="skill-item">
             <span class="skill-name">Python / FastAPI</span>
-            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="85%" style="width: 0%"></div></div>
           </div>
           <div class="skill-item">
             <span class="skill-name">REST APIs</span>
-            <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="92%" style="width: 0%"></div></div>
           </div>
         </div>
       </div>
@@ -521,15 +495,15 @@
         <div class="skill-items">
           <div class="skill-item">
             <span class="skill-name">PostgreSQL / MySQL</span>
-            <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="88%" style="width: 0%"></div></div>
           </div>
           <div class="skill-item">
             <span class="skill-name">MongoDB</span>
-            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="80%" style="width: 0%"></div></div>
           </div>
           <div class="skill-item">
             <span class="skill-name">Redis</span>
-            <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="75%" style="width: 0%"></div></div>
           </div>
         </div>
       </div>
@@ -539,15 +513,15 @@
         <div class="skill-items">
           <div class="skill-item">
             <span class="skill-name">Git / GitHub</span>
-            <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="92%" style="width: 0%"></div></div>
           </div>
           <div class="skill-item">
             <span class="skill-name">Docker</span>
-            <div class="skill-bar"><div class="skill-progress" style="width: 78%"></div></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="78%" style="width: 0%"></div></div>
           </div>
           <div class="skill-item">
             <span class="skill-name">AWS / Cloud</span>
-            <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="70%" style="width: 0%"></div></div>
           </div>
         </div>
       </div>
@@ -806,10 +780,34 @@ document.addEventListener('DOMContentLoaded', () => {
   // Contact Form
   document.getElementById('contactForm').addEventListener('submit', async (e) => {
     e.preventDefault();
+    const form = e.target;
     const msg = document.getElementById('contactMessage2');
-    msg.textContent = 'Mensagem enviada com sucesso! Entrarei em contato em breve.';
-    msg.className = 'form-message success';
-    document.getElementById('contactForm').reset();
+    
+    // Get form data
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      
+      const result = await response.json();
+      
+      if (response.ok) {
+        msg.textContent = result.message;
+        msg.className = 'form-message success';
+        form.reset();
+      } else {
+        msg.textContent = result.message || 'Erro ao enviar mensagem.';
+        msg.className = 'form-message error';
+      }
+    } catch (error) {
+      msg.textContent = 'Erro de conexão. Tente novamente.';
+      msg.className = 'form-message error';
+    }
   });
 
   // Animate Skills on Scroll
@@ -818,7 +816,11 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.querySelectorAll('.skill-progress').forEach(bar => {
-          bar.style.width = bar.style.width;
+          const targetWidth = bar.getAttribute('data-width') || bar.style.width;
+          bar.style.width = '0%';
+          setTimeout(() => {
+            bar.style.width = targetWidth;
+          }, 100);
         });
       }
     });
