@@ -7,12 +7,17 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["portfolio", "site", "HTML5"],
+  "keywords": [
+    "portfolio",
+    "site",
+    "HTML5"
+  ],
   "author": "Jariane Santos",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^2.3.0",
     "cors": "^2.8.6",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "nodemailer": "^9.0.5"
   }
 }

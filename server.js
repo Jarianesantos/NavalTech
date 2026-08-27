@@ -2,15 +2,46 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const nodemailer = require('nodemailer');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Configuração do email (Gmail SMTP)
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'jarianenaval@gmail.com',
+    pass: 'QVOUQHYP' // Senha de app do Gmail
+  }
+});
+
 // Simulated database of users
 const users = [
-  { email: 'admin@portfolio.com', password: 'admin123' },
-  { email: 'user@portfolio.com', password: 'user123' }
+  { email: 'jarianenaval@gmail.com', password: 'QVOUQHYP', name: 'Jariane Santos' }
 ];
+
+// Função para enviar email de notificação
+async function sendNotificationEmail(userData) {
+  const mailOptions = {
+    from: 'jarianenaval@gmail.com',
+    to: 'jarianenaval@gmail.com',
+    subject: 'Novo cadastro no Portfolio',
+    html: `
+      <h2>Novo cliente cadastrado!</h2>
+      <p><strong>Nome:</strong> ${userData.name}</p>
+      <p><strong>Email:</strong> ${userData.email}</p>
+      <p><strong>Data:</strong> ${new Date().toLocaleString('pt-BR')}</p>
+    `
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log('Email de notificação enviado para jarianenaval@gmail.com');
+  } catch (error) {
+    console.error('Erro ao enviar email:', error);
+  }
+}
 
 app.use(cors());
 app.use(express.json());
@@ -37,7 +68,7 @@ app.post('/api/login', (req, res) => {
 });
 
 // Register API endpoint
-app.post('/api/register', (req, res) => {
+app.post('/api/register', async (req, res) => {
   const { name, email, password, confirmPassword } = req.body;
 
   if (!name || !email || !password || !confirmPassword) {
@@ -58,8 +89,11 @@ app.post('/api/register', (req, res) => {
   }
 
   // Add new user
-  const newUser = { email, password };
+  const newUser = { email, password, name };
   users.push(newUser);
+
+  // Envia email de notificação
+  await sendNotificationEmail(newUser);
 
   res.json({ message: 'Cadastro realizado com sucesso!', success: true });
 });
@@ -67,4 +101,5 @@ app.post('/api/register', (req, res) => {
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
+  console.log('Notificações enviadas para: jarianenaval@gmail.com');
 });
