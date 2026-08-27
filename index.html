@@ -3,375 +3,693 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Jariane Santos | Engenheira de Software</title>
+  <meta name="description" content="Engenheira de Software especializada em desenvolvimento web, APIs REST, sistemas marítimos e soluções digitais sob medida.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
+<!-- Navbar -->
+<nav class="navbar">
   <div class="container">
-    <img src="technaval_logo.svg" alt="Portfolio Logo" class="logo" />
-    <ul>
-      <li><a href="#about">Sobre</a></li>
-      <li><a href="#home">Página Inicial</a></li>
-      <li><a href="#projects">Projetos</a></li>
+    <a href="#" class="logo">
+      <span class="logo-bracket">{</span>
+      <span class="logo-text">JS</span>
+      <span class="logo-bracket">}</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
       <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#contato">Contato</a></li>
     </ul>
     <div class="nav-right">
-      <a href="#login" class="login-btn">Login</a>
+      <a href="#contato" class="btn-primary">Vamos Conversar</a>
     </div>
+    <button class="mobile-menu-btn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </nav>
 
-<main>
-  <section class="hero">
-    <svg viewBox="0 0 1584 396" width="100%" height="100%">
-      <use href="technaval_logo.svg#technaval"/>
-    </svg>
-    <h2>Cifra de César • Anéis Criptográficos • Software Engineering</h2>
-  </section>
+<!-- Hero Section -->
+<section class="hero" id="inicio">
+  <div class="hero-bg">
+    <div class="code-rain"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-greeting">Olá, eu sou</p>
+      <h1 class="hero-name">Jariane Santos</h1>
+      <h2 class="hero-title">Engenheira de Software</h2>
+      <p class="hero-description">
+        Transformo ideias em soluções digitais robustas e escaláveis. 
+        Especializada em desenvolvimento web, APIs REST e sistemas para o setor marítimo.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projetos" class="btn-primary">Ver Projetos</a>
+        <a href="#contato" class="btn-secondary">Fale Comigo</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Anos de Experiência</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Projetos Entregues</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Satisfação dos Clientes</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="code-window">
+        <div class="code-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="code-title">jariane_dev.js</span>
+        </div>
+        <pre class="code-content"><code><span class="keyword">const</span> <span class="variable">engenheira</span> = {
+  <span class="property">nome</span>: <span class="string">"Jariane Santos"</span>,
+  <span class="property">especialidade</span>: <span class="string">"Software Engineering"</span>,
+  <span class="property">skills</span>: [<span class="string">"Node.js"</span>, <span class="string">"React"</span>, <span class="string">"Python"</span>],
+  <span class="property">disponivel</span>: <span class="keyword">true</span>,
+  <span class="property">contato</span>: <span class="string">"jarianenaval@gmail.com"</span>
+};
 
-  <section class="section" id="home">
-    <h2>Página Inicial</h2>
-    <p> Bem-vindo ao portfolio. Aqui apresento projetos de engenharia de software, criptografia e design naval inspirado em sistemas de comunicação seguros.</p>
-  </section>
+<span class="keyword">function</span> <span class="function">contratar</span>(projeto) {
+  <span class="keyword">return</span> <span class="string">`Pronta para ${
+    projetos.iniciar(projeto)
+  }!`</span>;
+}</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section class="section" id="about">
-    <h2>Sobre</h2>
-    <p>
-      Visual que integra a <strong>Cifra de César (ROT 3)</strong> :<code>TechNaval</code> → <code>Wkhfkqdydo</code>,
-      anéis giratórios animados e um design estilo terminal retro.
-    </p>
-  </section>
+<!-- Sobre -->
+<section class="section" id="sobre">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Quem sou</span>
+      <h2 class="section-title">Sobre Mim</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-content">
+        <p class="about-text">
+          Sou uma engenheira de software apaixonada por criar soluções que fazem a diferença. 
+          Com experiência em desenvolvimento full-stack, especializo-me em construir sistemas 
+          robustos, escaláveis e de alta performance.
+        </p>
+        <p class="about-text">
+          Meu foco está em transformar problemas complexos em soluções elegantes, 
+          sempre priorizando qualidade, segurança e experiência do usuário.
+        </p>
+        <div class="about-highlights">
+          <div class="highlight">
+            <i class="fas fa-code"></i>
+            <span>Desenvolvimento Full-Stack</span>
+          </div>
+          <div class="highlight">
+            <i class="fas fa-ship"></i>
+            <span>Sistemas Marítimos</span>
+          </div>
+          <div class="highlight">
+            <i class="fas fa-shield-alt"></i>
+            <span>Segurança de Dados</span>
+          </div>
+          <div class="highlight">
+            <i class="fas fa-rocket"></i>
+            <span>Alta Performance</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-image">
+        <div class="image-frame">
+          <div class="code-block">
+            <span class="code-comment">// Minha filosofia</span>
+            <span class="code-line"><span class="keyword">const</span> filosofia = {</span>
+            <span class="code-line">  qualidade: <span class="string">"excelência"</span>,</span>
+            <span class="code-line">  prazo: <span class="string">"compromisso"</span>,</span>
+            <span class="code-line">  cliente: <span class="string">"prioridade"</span></span>
+            <span class="code-line">};</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section class="section" id="projects">
-    <h2>Projetos</h2>
-    <p>Portfólio estático gerado com Python + HTML5/CSS3. Futuramente adicionarei mais projetos e um formulário de contato.</p>
-  </section>
+<!-- Serviços -->
+<section class="section section-dark" id="servicos">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">O que faço</span>
+      <h2 class="section-title">Serviços</h2>
+      <p class="section-subtitle">Soluções completas para o seu negócio</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <h3>Desenvolvimento Web</h3>
+        <p>Sites e aplicações web modernas, responsivas e otimizadas com as melhores tecnologias do mercado.</p>
+        <ul class="service-features">
+          <li>React / Next.js</li>
+          <li>HTML5 / CSS3</li>
+          <li>JavaScript / TypeScript</li>
+        </ul>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-server"></i>
+        </div>
+        <h3>APIs REST</h3>
+        <p>Desenvolvimento de APIs robustas e seguras para integração entre sistemas e aplicações.</p>
+        <ul class="service-features">
+          <li>Node.js / Express</li>
+          <li>Python / FastAPI</li>
+          <li>Autenticação JWT</li>
+        </ul>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+        <h3>Aplicativos Mobile</h3>
+        <p>Aplicativos nativos e multiplataforma para iOS e Android com performance nativa.</p>
+        <ul class="service-features">
+          <li>React Native</li>
+          <li>Flutter</li>
+          <li>PWA</li>
+        </ul>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-database"></i>
+        </div>
+        <h3>Banco de Dados</h3>
+        <p>Modelagem, otimização e gerenciamento de bancos de dados relacionais e NoSQL.</p>
+        <ul class="service-features">
+          <li>PostgreSQL / MySQL</li>
+          <li>MongoDB</li>
+          <li>Redis</li>
+        </ul>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-cloud"></i>
+        </div>
+        <h3>Cloud & DevOps</h3>
+        <p>Deploy, automação e infraestrutura em nuvem para aplicações escaláveis.</p>
+        <ul class="service-features">
+          <li>AWS / Azure</li>
+          <li>Docker / Kubernetes</li>
+          <li>CI/CD</li>
+        </ul>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-ship"></i>
+        </div>
+        <h3>Sistemas Marítimos</h3>
+        <p>Soluções especializadas para o setor naval e offshore.</p>
+        <ul class="service-features">
+          <li>Rastreamento de embarcações</li>
+          <li>Sistemas de navegação</li>
+          <li>Gestão de portos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section class="section" id="reference">
-    <h2>Referência de design</h2>
-    <p>Inspirado no portfólio de embarcações do <a href="https://wilsonsons.com.br/pt-br/estaleiro/portfolio-de-embarcacoes/" target="_blank">Wilson Sons</a>.</p>
-    <div class="grid">
-      <article class="card">
-        <h3>Projeto Navio</h3>
-        <p>Descrição resumo de um projeto de estaleiro focado em navios de apoio offshore.</p>
+<!-- Projetos -->
+<section class="section" id="projetos">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Portfólio</span>
+      <h2 class="section-title">Projetos em Destaque</h2>
+      <p class="section-subtitle">Conheça alguns dos meus trabalhos</p>
+    </div>
+    <div class="projects-grid">
+      <article class="project-card">
+        <div class="project-image">
+          <div class="project-placeholder">
+            <i class="fas fa-ship"></i>
+          </div>
+          <div class="project-overlay">
+            <a href="#" class="project-link">Ver Detalhes</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-category">Sistema Web</span>
+          <h3>NavalTech Platform</h3>
+          <p>Plataforma completa para gestão de operações marítimas com rastreamento em tempo real.</p>
+          <div class="project-tech">
+            <span>Node.js</span>
+            <span>React</span>
+            <span>PostgreSQL</span>
+          </div>
+        </div>
       </article>
-      <article class="card">
-        <h3>Reboque Marítimo</h3>
-        <p>Visão geral dos serviços de reboque e assistência naval.</p>
+      
+      <article class="project-card">
+        <div class="project-image">
+          <div class="project-placeholder">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="project-overlay">
+            <a href="#" class="project-link">Ver Detalhes</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-category">API REST</span>
+          <h3>Data Analytics API</h3>
+          <p>API para processamento e análise de dados com relatórios automatizados.</p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>FastAPI</span>
+            <span>Redis</span>
+          </div>
+        </div>
       </article>
-      <article class="card">
-        <h3>Construção Customizada</h3>
-        <p>Exemplo de layout de cards ilustrando construção de embarcações sob medida.</p>
+      
+      <article class="project-card">
+        <div class="project-image">
+          <div class="project-placeholder">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div class="project-overlay">
+            <a href="#" class="project-link">Ver Detalhes</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-category">Mobile</span>
+          <h3>NavalTrack App</h3>
+          <p>Aplicativo mobile para rastreamento de embarcações e gestão de tripulações.</p>
+          <div class="project-tech">
+            <span>React Native</span>
+            <span>Firebase</span>
+            <span>Maps API</span>
+          </div>
+        </div>
+      </article>
+      
+      <article class="project-card">
+        <div class="project-image">
+          <div class="project-placeholder">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <div class="project-overlay">
+            <a href="#" class="project-link">Ver Detalhes</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-category">E-commerce</span>
+          <h3>Marine Shop</h3>
+          <p>Plataforma de e-commerce para equipamentos navais com pagamento integrado.</p>
+          <div class="project-tech">
+            <span>Next.js</span>
+            <span>Stripe</span>
+            <span>MongoDB</span>
+          </div>
+        </div>
       </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section" id="servicos">
-    <h2>Portfólio de serviços</h2>
-    <p>Serviços destacados do portfolio:</p>
-    <ul>
-      <li>Desenvolvimento de APIs REST</li>
-    </ul>
-  </section>
+<!-- Habilidades -->
+<section class="section section-dark" id="habilidades">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Competências</span>
+      <h2 class="section-title">Habilidades Técnicas</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3><i class="fas fa-code"></i> Frontend</h3>
+        <div class="skill-items">
+          <div class="skill-item">
+            <span class="skill-name">HTML5 / CSS3</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">JavaScript / TypeScript</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">React / Next.js</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-server"></i> Backend</h3>
+        <div class="skill-items">
+          <div class="skill-item">
+            <span class="skill-name">Node.js / Express</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Python / FastAPI</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">REST APIs</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-database"></i> Banco de Dados</h3>
+        <div class="skill-items">
+          <div class="skill-item">
+            <span class="skill-name">PostgreSQL / MySQL</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">MongoDB</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Redis</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-tools"></i> Ferramentas</h3>
+        <div class="skill-items">
+          <div class="skill-item">
+            <span class="skill-name">Git / GitHub</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Docker</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 78%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">AWS / Cloud</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<footer>
-  <p>Portfólio pessoal – <a href="https://github.com/Jarianesantos/NavalTech">GitHub</a></p>
+<!-- Contato -->
+<section class="section" id="contato">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Fale comigo</span>
+      <h2 class="section-title">Vamos Trabalhar Juntos?</h2>
+      <p class="section-subtitle">Estou pronta para transformar sua ideia em realidade</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h4>Email</h4>
+            <p>jarianenaval@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-github"></i>
+          <div>
+            <h4>GitHub</h4>
+            <p>github.com/Jarianesantos</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <div>
+            <h4>LinkedIn</h4>
+            <p>linkedin.com/in/jariane-santos</p>
+          </div>
+        </div>
+        <div class="contact-social">
+          <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contactName">Nome</label>
+            <input type="text" id="contactName" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contactSubject">Assunto</label>
+          <input type="text" id="contactSubject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="contactMessage">Mensagem</label>
+          <textarea id="contactMessage" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary btn-full">
+          <i class="fas fa-paper-plane"></i> Enviar Mensagem
+        </button>
+        <div id="contactMessage2" class="form-message"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-bracket">{</span>
+          <span class="logo-text">JS</span>
+          <span class="logo-bracket">}</span>
+        </a>
+        <p>Engenheira de Software</p>
+      </div>
+      <div class="footer-links">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Jariane Santos. Todos os direitos reservados.</p>
+    </div>
+  </div>
 </footer>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const loginBtn = document.querySelector('.login-btn');
+<!-- Login Modal -->
+<div class="login-modal" id="loginModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="login">Login</button>
+      <button class="tab-btn" data-tab="register">Cadastro</button>
+    </div>
     
-    // Cria o modal de login/cadastro
-    const loginModal = document.createElement('div');
-    loginModal.className = 'login-modal';
-    loginModal.innerHTML = `
-      <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <div class="tabs">
-          <button class="tab-btn active" data-tab="login">Login</button>
-          <button class="tab-btn" data-tab="register">Cadastro</button>
-        </div>
-        
-        <!-- Formulário de Login -->
-        <form id="loginForm" class="tab-content active">
-          <div class="form-group">
-            <label for="loginEmail">Email:</label>
-            <input type="email" id="loginEmail" name="email" placeholder="seu@email.com" required>
-          </div>
-          <div class="form-group">
-            <label for="loginPassword">Senha:</label>
-            <input type="password" id="loginPassword" name="password" placeholder="Sua senha" required>
-          </div>
-          <button type="submit" class="submit-btn">Entrar</button>
-          <div id="loginMessage" class="login-message"></div>
-        </form>
-        
-        <!-- Formulário de Cadastro -->
-        <form id="registerForm" class="tab-content">
-          <div class="form-group">
-            <label for="regName">Nome completo:</label>
-            <input type="text" id="regName" name="name" placeholder="Seu nome" required>
-          </div>
-          <div class="form-group">
-            <label for="regEmail">Email:</label>
-            <input type="email" id="regEmail" name="email" placeholder="seu@email.com" required>
-          </div>
-          <div class="form-group">
-            <label for="regPassword">Senha:</label>
-            <input type="password" id="regPassword" name="password" placeholder="Mínimo 6 caracteres" required minlength="6">
-          </div>
-          <div class="form-group">
-            <label for="regConfirmPassword">Confirmar senha:</label>
-            <input type="password" id="regConfirmPassword" name="confirmPassword" placeholder="Repita a senha" required>
-          </div>
-          <button type="submit" class="submit-btn">Cadastrar</button>
-          <div id="registerMessage" class="login-message"></div>
-        </form>
+    <form id="loginForm" class="tab-content active">
+      <div class="form-group">
+        <label for="loginEmail">Email:</label>
+        <input type="email" id="loginEmail" required>
       </div>
-    `;
-    document.body.appendChild(loginModal);
+      <div class="form-group">
+        <label for="loginPassword">Senha:</label>
+        <input type="password" id="loginPassword" required>
+      </div>
+      <button type="submit" class="btn-primary btn-full">Entrar</button>
+      <div id="loginMessage" class="form-message"></div>
+    </form>
     
-    // Estilos do modal
-    const style = document.createElement('style');
-    style.textContent = `
-      .login-modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        z-index: 1000;
-        justify-content: center;
-        align-items: center;
-      }
-      .modal-content {
-        background-color: var(--card);
-        padding: 2rem;
-        border-radius: 0.5rem;
-        width: 100%;
-        max-width: 400px;
-        position: relative;
-        color: var(--fg);
-      }
-      .close-modal {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--muted);
-      }
-      .close-modal:hover {
-        color: var(--fg);
-      }
-      .tabs {
-        display: flex;
-        margin-bottom: 1.5rem;
-        border-bottom: 1px solid #30363d;
-      }
-      .tab-btn {
-        flex: 1;
-        padding: 0.75rem;
-        background: none;
-        border: none;
-        color: var(--muted);
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: color 0.2s, border-color 0.2s;
-        border-bottom: 2px solid transparent;
-      }
-      .tab-btn:hover {
-        color: var(--fg);
-      }
-      .tab-btn.active {
-        color: var(--accent);
-        border-bottom-color: var(--accent);
-      }
-      .tab-content {
-        display: none;
-      }
-      .tab-content.active {
-        display: block;
-      }
-      .form-group {
-        margin-bottom: 1rem;
-      }
-      .form-group label {
-        display: block;
-        margin-bottom: 0.5rem;
-        color: var(--muted);
-      }
-      .form-group input {
-        width: 100%;
-        padding: 0.75rem;
-        border: 1px solid #30363d;
-        border-radius: 0.375rem;
-        background-color: #0d1117;
-        color: var(--fg);
-        font-size: 1rem;
-      }
-      .form-group input:focus {
-        outline: none;
-        border-color: var(--accent);
-      }
-      .submit-btn {
-        width: 100%;
-        padding: 0.75rem;
-        background-color: var(--accent);
-        color: #0d1117;
-        border: none;
-        border-radius: 0.375rem;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.2s;
-      }
-      .submit-btn:hover {
-        background-color: #4cd651;
-      }
-      .login-message {
-        margin-top: 1rem;
-        text-align: center;
-        padding: 0.5rem;
-        border-radius: 0.375rem;
-        display: none;
-      }
-      .login-message.success {
-        background-color: rgba(63, 185, 80, 0.2);
-        color: var(--accent);
-        display: block;
-      }
-      .login-message.error {
-        background-color: rgba(248, 81, 73, 0.2);
-        color: #f85149;
-        display: block;
-      }
-    `;
-    document.head.appendChild(style);
-    
-    // Eventos das tabs
-    const tabs = loginModal.querySelectorAll('.tab-btn');
-    const tabContents = loginModal.querySelectorAll('.tab-content');
-    
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tabContents.forEach(tc => tc.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById(`${tab.dataset.tab}Form`).classList.add('active');
-      });
-    });
-    
-    // Eventos do modal
-    loginBtn.addEventListener('click', (e) => {
+    <form id="registerForm" class="tab-content">
+      <div class="form-group">
+        <label for="regName">Nome completo:</label>
+        <input type="text" id="regName" required>
+      </div>
+      <div class="form-group">
+        <label for="regEmail">Email:</label>
+        <input type="email" id="regEmail" required>
+      </div>
+      <div class="form-group">
+        <label for="regPassword">Senha:</label>
+        <input type="password" id="regPassword" required minlength="6">
+      </div>
+      <div class="form-group">
+        <label for="regConfirmPassword">Confirmar senha:</label>
+        <input type="password" id="regConfirmPassword" required>
+      </div>
+      <button type="submit" class="btn-primary btn-full">Cadastrar</button>
+      <div id="registerMessage" class="form-message"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile Menu
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+  
+  mobileMenuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    mobileMenuBtn.classList.toggle('active');
+  });
+
+  // Smooth Scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
       e.preventDefault();
-      loginModal.style.display = 'flex';
-    });
-    
-    loginModal.querySelector('.close-modal').addEventListener('click', () => {
-      loginModal.style.display = 'none';
-    });
-    
-    window.addEventListener('click', (e) => {
-      if (e.target === loginModal) {
-        loginModal.style.display = 'none';
-      }
-    });
-    
-    // Validação do login
-    document.getElementById('loginForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const email = document.getElementById('loginEmail').value;
-      const password = document.getElementById('loginPassword').value;
-      const messageDiv = document.getElementById('loginMessage');
-      
-      try {
-        const response = await fetch('/api/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ email, password })
-        });
-        
-        const data = await response.json();
-        
-        if (response.ok) {
-          messageDiv.textContent = data.message;
-          messageDiv.className = 'login-message success';
-          
-          setTimeout(() => {
-            loginModal.style.display = 'none';
-            alert('Login realizado com sucesso!');
-          }, 2000);
-        } else {
-          messageDiv.textContent = data.message;
-          messageDiv.className = 'login-message error';
-        }
-      } catch (error) {
-        messageDiv.textContent = 'Erro ao conectar ao servidor.';
-        messageDiv.className = 'login-message error';
-      }
-    });
-    
-    // Validação do cadastro
-    document.getElementById('registerForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const name = document.getElementById('regName').value;
-      const email = document.getElementById('regEmail').value;
-      const password = document.getElementById('regPassword').value;
-      const confirmPassword = document.getElementById('regConfirmPassword').value;
-      const messageDiv = document.getElementById('registerMessage');
-      
-      if (password !== confirmPassword) {
-        messageDiv.textContent = 'As senhas não coincidem.';
-        messageDiv.className = 'login-message error';
-        return;
-      }
-      
-      try {
-        const response = await fetch('/api/register', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ name, email, password, confirmPassword })
-        });
-        
-        const data = await response.json();
-        
-        if (response.ok) {
-          messageDiv.textContent = data.message;
-          messageDiv.className = 'login-message success';
-          
-          // Limpa o formulário
-          document.getElementById('registerForm').reset();
-          
-          setTimeout(() => {
-            // Muda para a aba de login
-            tabs[0].click();
-            document.getElementById('loginMessage').textContent = 'Cadastro realizado! Faça login.';
-            document.getElementById('loginMessage').className = 'login-message success';
-          }, 2000);
-        } else {
-          messageDiv.textContent = data.message;
-          messageDiv.className = 'login-message error';
-        }
-      } catch (error) {
-        messageDiv.textContent = 'Erro ao conectar ao servidor.';
-        messageDiv.className = 'login-message error';
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        navLinks.classList.remove('active');
       }
     });
   });
+
+  // Navbar Scroll Effect
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Login Modal
+  const loginModal = document.getElementById('loginModal');
+  const loginBtns = document.querySelectorAll('[href="#login"], .btn-primary[href="#contato"]');
+  
+  document.querySelectorAll('.tab-btn').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(`${tab.dataset.tab}Form`).classList.add('active');
+    });
+  });
+
+  document.querySelector('.close-modal').addEventListener('click', () => {
+    loginModal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === loginModal) loginModal.style.display = 'none';
+  });
+
+  // Login Form
+  document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    const msg = document.getElementById('loginMessage');
+    
+    try {
+      const res = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+      const data = await res.json();
+      msg.textContent = data.message;
+      msg.className = `form-message ${res.ok ? 'success' : 'error'}`;
+      if (res.ok) setTimeout(() => { loginModal.style.display = 'none'; }, 2000);
+    } catch (err) {
+      msg.textContent = 'Erro ao conectar ao servidor.';
+      msg.className = 'form-message error';
+    }
+  });
+
+  // Register Form
+  document.getElementById('registerForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('regName').value;
+    const email = document.getElementById('regEmail').value;
+    const password = document.getElementById('regPassword').value;
+    const confirmPassword = document.getElementById('regConfirmPassword').value;
+    const msg = document.getElementById('registerMessage');
+    
+    if (password !== confirmPassword) {
+      msg.textContent = 'As senhas não coincidem.';
+      msg.className = 'form-message error';
+      return;
+    }
+    
+    try {
+      const res = await fetch('/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password, confirmPassword })
+      });
+      const data = await res.json();
+      msg.textContent = data.message;
+      msg.className = `form-message ${res.ok ? 'success' : 'error'}`;
+      if (res.ok) {
+        document.getElementById('registerForm').reset();
+        setTimeout(() => { document.querySelector('[data-tab="login"]').click(); }, 2000);
+      }
+    } catch (err) {
+      msg.textContent = 'Erro ao conectar ao servidor.';
+      msg.className = 'form-message error';
+    }
+  });
+
+  // Contact Form
+  document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msg = document.getElementById('contactMessage2');
+    msg.textContent = 'Mensagem enviada com sucesso! Entrarei em contato em breve.';
+    msg.className = 'form-message success';
+    document.getElementById('contactForm').reset();
+  });
+
+  // Animate Skills on Scroll
+  const observerOptions = { threshold: 0.5 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.skill-progress').forEach(bar => {
+          bar.style.width = bar.style.width;
+        });
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.skill-category').forEach(cat => observer.observe(cat));
+});
 </script>
 
 </body>
