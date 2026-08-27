@@ -74,15 +74,14 @@
   </section>
 
   <section class="section" id="home">
-    <h2>Página Inicial</h2>
-    <p> Bem-vindo ao portfólio TechNaval. Aqui apresento projetos de engenharia de software, criptografia e design naval inspirado em sistemas de comunicação seguros.</p>
+   <p> Bem-vindo ao portfólio TechNaval. Aqui apresento projetos de engenharia de software, criptografia e design naval inspirado em sistemas de comunicação seguros.</p>
   </section>
 
   <section class="section" id="about">
     <h2>Sobre</h2>
     <p>
       Visual que integra a <strong>Cifra de César (ROT 3)</strong> : <code>TechNaval</code> → <code>Wkhfkqdydo</code>,
-      anéis giratórios animados e um design estilo terminal retro.
+       e um design estilo terminal retro.
     </p>
   </section>
 
@@ -117,6 +116,27 @@
 <footer>
   <p>Portfólio pessoal – <a href="https://github.com/Jarianesantos/NavalTech">GitHub</a></p>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const loginBtn = document.querySelector('.login-btn');
+    loginBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Exibe alerta só como placeholder visual
+      alert('Botão Login clicado. Implemente a validação via POST /api/login no server.js.');
+      // Exemplo de fetch:
+      /*
+      fetch('/api/login', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ email: 'admin@technaval.com', password: 'admin123' })
+      })
+      .then(res => res.json())
+      .then(data => console.log(data));
+      */
+    });
+  });
+</script>
 
 </body>
 </html>
