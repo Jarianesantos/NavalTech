@@ -1,0 +1,10 @@
+body {margin:0;font-family:Arial,sans-serif;background:#0d1117;color:#c9d1d9;}
+header{text-align:center;padding:2rem;background:#161b22;}
+h1{margin:0;font-size:2.5rem;}
+p{color:#8b949e;}
+
+.hero{position:relative;height:60vh;}
+.hero svg{width:100%;height:100%;object-fit:contain;}
+
+.about{max-width:800px;margin:auto;padding:2rem;}
+footer{text-align:center;font-size:0.8rem;color:#58a6ff;padding:1rem;background:#161b22;}
