@@ -4,8 +4,8 @@ services:
     runtime: node
     region: oregon
     plan: free
-    buildCommand: cd /opt/render/project/src && npm install
-    startCommand: cd /opt/render/project/src && node server.js
+    buildCommand: npm install
+    startCommand: node server.js
     envVars:
       - key: NODE_ENV
         value: production
