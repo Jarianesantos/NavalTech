@@ -17,6 +17,7 @@ a:hover {text-decoration:underline;}
 
 nav {background:var(--card);padding:1rem 2rem;}
 nav .container {max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;}
+nav .logo {width:120px;height:auto;margin-right:1rem;}
 nav h1 {font-size:1.8rem;color:var(--accent);}
 nav ul {display:flex;gap:1.5rem;list-style:none;}
 nav ul li a {color:var(--muted);transition:color .2s;}
