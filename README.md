@@ -1,41 +1,122 @@
-# Portfolio
+# NavalTech - Portfolio
 
-Site estático de portfólio pessoal.
+Portfólio profissional de Jariane Santos - Desenvolvedora Full Stack especializada em soluções marítimas e inteligência artificial.
 
-## Características
+## Sobre o Projeto
 
-* **Logo** – SVG com gradientes, anéis criptográficos giratórios e a Cifra de César (ROT 3).
-* **Descrição** – breve texto sobre o conceito e a aplicação em engenharia de software.
-* **Deploy** – pronto para GitHub Pages (`git push` → Settings → Pages).
+Este é um portfólio web completo desenvolvido para apresentar projetos e serviços de desenvolvimento de software, com foco no setor marítimo e naval. O site inclui sistema de autenticação, notificações por email e design responsivo com tema marítimo.
 
-## Como publicar
+## Funcionalidades
 
-```bash
-git add .
-git commit -m "Add portfolio site"
-git push origin main
+- **Design Responsivo** - Layout adaptável para desktop, tablet e mobile
+- **Tema Marítimo** - Paleta de cores inspirada no oceano (azul-marinho, branco gelo)
+- **Sistema de Autenticação** - Login e cadastro de usuários
+- **Notificações por Email** - Alertas automáticos via nodemailer
+- **Projetos do GitHub** - Integração com repositórios reais
+- **Animações Suaves** - Transições e efeitos visuais modernos
+- **Menu Mobile** - Navegação responsiva com hamburger menu
+
+## Tecnologias Utilizadas
+
+- **Frontend:** HTML5, CSS3, JavaScript
+- **Backend:** Node.js, Express 5
+- **Banco de Dados:** SQLite (via better-sqlite3)
+- **Email:** Nodemailer
+- **Fonte:** Times New Roman
+- **Ícones:** Font Awesome 6
+
+## Estrutura do Projeto
+
 ```
-
-Em seguida, no GitHub: **Settings → Pages → Source: main branch / /(root)**.  
-O site ficará disponível no endereço configurado.
+NavalTech/
+├── index.html              # Página principal
+├── style.css               # Estilos CSS
+├── server.js               # Backend Node.js/Express
+├── package.json            # Dependências
+├── gerar_projetos.py       # Gerador de projetos (Python)
+├── projetos_gerados.html   # HTML gerado pelo script
+├── technaval_logo.svg      # Logotipo SVG
+└── README.md               # Este arquivo
+```
 
 ## Como Executar Localmente
 
+### Pré-requisitos
+- Node.js (v18 ou superior)
+- npm
+
+### Instalação
+
 ```bash
+# Clonar o repositório
+git clone https://github.com/Jarianesantos/NavalTech.git
+
+# Navegar até o diretório
+cd NavalTech
+
+# Instalar dependências
 npm install
+
+# Iniciar o servidor
 npm start
 ```
 
 Acesse: [http://localhost:3000](http://localhost:3000)
 
-## Estrutura do Projeto
+### Credenciais de Login
 
+- **Email:** jarianenaval@gmail.com
+- **Senha:** QVOUQHYP
+
+## Scripts Úteis
+
+### Gerar Projetos (Python)
+
+O script `gerar_projetos.py` gera automaticamente a seção de projetos do portfólio:
+
+```bash
+python gerar_projetos.py
 ```
-technaval-portfolio/
-├── index.html          # Página principal
-├── style.css           # Estilos
-├── server.js           # Backend
-├── package.json        # Dependências
-├── package-lock.json   # Lock de dependências
-└── technaval_logo.svg  # Logotipo
+
+Isso criará o arquivo `projetos_gerados.html` com a seção de projetos atualizada.
+
+## Deploy
+
+### GitHub Pages
+
+1. Faça push para o repositório
+2. Acesse **Settings → Pages**
+3. Selecione a branch `main` e pasta `/ (root)`
+4. O site estará disponível no endereço configurado
+
+### Deploy com Node.js
+
+```bash
+# Instalar dependências
+npm install
+
+# Iniciar em produção
+npm start
 ```
+
+## Projetos em Destaque
+
+| Projeto | Categoria | Tecnologias |
+|---------|-----------|-------------|
+| NavalTech Platform | Sistema Web | Node.js, Express, HTML5, CSS3 |
+| IANaval | Inteligência Artificial | Python, scikit-learn, Pandas |
+| SeaGuardian | Inteligência Artificial | Python, TensorFlow, OpenCV |
+| PSV Hybrid Propulsion | Sistemas Embarcados | Python, Arduino, IoT |
+| OptimarineAI | Inteligência Artificial | Python, TensorFlow |
+| Maritime Data Platform | Ciência de Dados | Python, GeoPandas, PostgreSQL |
+
+## Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## Contato
+
+**Jariane Santos**
+- Email: jarianenaval@gmail.com
+- GitHub: [github.com/Jarianesantos](https://github.com/Jarianesantos)
+- LinkedIn: [linkedin.com/in/jariane-santos-b2921a1b2](https://linkedin.com/in/jariane-santos-b2921a1b2)
