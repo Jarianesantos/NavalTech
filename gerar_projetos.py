@@ -3,67 +3,67 @@
 Script Python para gerar a seção de projetos do portfólio
 """
 
-# Dados dos projetos com detalhes completos
+# Dados dos projetos com detalhes completos (projetos reais do GitHub)
 projetos = [
     {
         "titulo": "NavalTech Platform",
         "categoria": "Sistema Web",
-        "descricao": "Plataforma completa para gestão de operações marítimas com rastreamento em tempo real de embarcações e monitoramento de status.",
-        "detalhes": "Sistema desenvolvido para empresas do setor marítimo que necessitam de controle total sobre suas operações. Inclui rastreamento GPS em tempo real, dashboard administrativo, relatórios automatizados e sistema de alertas.",
-        "tecnologias": ["Node.js", "React", "PostgreSQL"],
+        "descricao": "Plataforma completa para prestação de serviços navais e tecnologia da IA com interface moderna.",
+        "detalhes": "Portfólio profissional desenvolvido com Node.js, Express e HTML5/CSS3. Inclui sistema de autenticação, notificações por email e design responsivo inspirado no setor marítimo.",
+        "tecnologias": ["Node.js", "Express", "HTML5", "CSS3"],
         "icon": "fas fa-ship",
-        "link": "#",
-        "funcionalidades": ["Rastreamento GPS em tempo real", "Dashboard administrativo", "Relatórios automatizados", "Sistema de alertas"]
+        "link": "https://github.com/Jarianesantos/NavalTech",
+        "funcionalidades": ["Sistema de autenticação", "Notificações por email", "Design responsivo", "Tema marítimo"]
     },
     {
-        "titulo": "Data Analytics API",
-        "categoria": "API REST",
-        "descricao": "API robusta para processamento e análise de dados com relatórios automatizados e integração com múltiplas fontes.",
-        "detalhes": "API desenvolvida para empresas que precisam processar grandes volumes de dados. Oferece endpoints para inserção, consulta e análise de dados com geração de relatórios em PDF e Excel.",
-        "tecnologias": ["Python", "FastAPI", "Redis"],
-        "icon": "fas fa-chart-line",
-        "link": "#",
-        "funcionalidades": ["Processamento de dados em lote", "Geração de relatórios", "Cache com Redis", "Documentação Swagger"]
+        "titulo": "IANaval - Monitoramento Preditivo",
+        "categoria": "Inteligência Artificial",
+        "descricao": "Sistema de monitoramento preditivo de motor naval com sensores e rede neural.",
+        "detalhes": "Projeto Python para detectar risco de falha em motor naval a partir de leituras de sensores (temperatura, pressão, vibração). Utiliza Pipeline do scikit-learn com StandardScaler e MLPClassifier.",
+        "tecnologias": ["Python", "scikit-learn", "Pandas", "NumPy"],
+        "icon": "fas fa-brain",
+        "link": "https://github.com/Jarianesantos/ianaval",
+        "funcionalidades": ["Análise preditiva", "Simulação em tempo real", "Diagnóstico automático", "Treinamento de modelo"]
     },
     {
-        "titulo": "NavalTrack App",
-        "categoria": "Mobile",
-        "descricao": "Aplicativo mobile para rastreamento de embarcações e gestão de tripulações com notificações em tempo real.",
-        "detalhes": "Aplicativo desenvolvido para tripulantes e gestores de frota marítima. Permite acompanhar a posição das embarcações, receber alertas de изменения de rota e gerenciar escalas de tripulação.",
-        "tecnologias": ["React Native", "Firebase", "Maps API"],
-        "icon": "fas fa-mobile-alt",
-        "link": "#",
-        "funcionalidades": ["Mapa interativo", "Notificações push", "Gestão de tripulação", "Modo offline"]
+        "titulo": "SeaGuardian - Monitoramento IA",
+        "categoria": "Inteligência Artificial",
+        "descricao": "Sistema de monitoramento marítimo baseado em inteligência artificial.",
+        "detalhes": "Plataforma de monitoramento que utiliza IA para análise de dados marítimos,提供endo insights em tempo real sobre operações portuárias e de navegação.",
+        "tecnologias": ["Python", "TensorFlow", "OpenCV", "Flask"],
+        "icon": "fas fa-eye",
+        "link": "https://github.com/Jarianesantos/seaguardian",
+        "funcionalidades": ["Monitoramento em tempo real", "Análise de imagens", "Alertas automáticos", "Dashboard interativo"]
     },
     {
-        "titulo": "Marine Shop",
-        "categoria": "E-commerce",
-        "descricao": "Plataforma de e-commerce para equipamentos navais com pagamento integrado e gestão de estoque.",
-        "detalhes": "Loja virtual completa para venda de equipamentos e suprimentos navais. Sistema de pagamento integrado, controle de estoque, gestão de pedidos e painel administrativo para vendedores.",
-        "tecnologias": ["Next.js", "Stripe", "MongoDB"],
-        "icon": "fas fa-shopping-cart",
-        "link": "#",
-        "funcionalidades": ["Pagamento integrado", "Gestão de estoque", "Painel admin", "Sistema de frete"]
+        "titulo": "PSV Hybrid Propulsion",
+        "categoria": "Sistemas Embarcados",
+        "descricao": "Sistema de propulsão híbrida para o PSV World Diamond.",
+        "detalhes": "Desenvolvimento de sistema de gerenciamento energético para propulsão híbrida diesel-elétrica, otimizando consumo de combustível e reduzindo emissões.",
+        "tecnologias": ["Python", "Arduino", "Sensores", "IoT"],
+        "icon": "fas fa-cogs",
+        "link": "https://github.com/Jarianesantos/psv-hybrid-propulsion",
+        "funcionalidades": ["Gerenciamento energético", "Otimização de consumo", "Monitoramento de sensores", "Controle automático"]
     },
     {
-        "titulo": "Port Management System",
-        "categoria": "Sistema Web",
-        "descricao": "Sistema de gestão portuária para controle de cargas, agendamento de navios e acompanhamento operacional.",
-        "detalhes": "Sistema desenvolvido para portos que precisam gerenciar operações de carga e descarga. Inclui agendamento de navios, controle de cargas, acompanhamento em tempo real e relatórios operacionais.",
-        "tecnologias": ["Django", "React", "PostgreSQL"],
-        "icon": "fas fa-warehouse",
-        "link": "#",
-        "funcionalidades": ["Agendamento de navios", "Controle de cargas", "Dashboard operacional", "Relatórios automáticos"]
+        "titulo": "OptimarineAI",
+        "categoria": "Inteligência Artificial",
+        "descricao": "Algoritmos de otimização e redução de carbono para operações marítimas.",
+        "detalhes": "Projeto de pesquisa focado em aplicar técnicas de IA e algoritmos de otimização para reduzir a emissão de carbono em embarcações, contribuindo para a sustentabilidade do setor naval.",
+        "tecnologias": ["Python", "TensorFlow", "Algoritmos Genéticos", "Simulação"],
+        "icon": "fas fa-leaf",
+        "link": "https://github.com/Jarianesantos/optimarineAI",
+        "funcionalidades": ["Otimização de rotas", "Redução de emissões", "Simulação ambiental", "Relatórios de sustentabilidade"]
     },
     {
-        "titulo": "Weather Alert API",
-        "categoria": "API REST",
-        "descricao": "API de alertas meteorológicos para o setor marítimo com previsões personalizadas e notificações automáticas.",
-        "detalhes": "API que fornece dados meteorológicos personalizados para operações marítimas. Inclui previsões de ondas, ventos, visibilidade e alertas de tempestades com notificações automáticas.",
-        "tecnologias": ["Node.js", "Express", "MongoDB"],
-        "icon": "fas fa-cloud-sun",
-        "link": "#",
-        "funcionalidades": ["Previsão de ondas", "Alertas de tempestades", "Notificações automáticas", "Histórico meteorológico"]
+        "titulo": "Maritime Data Platform",
+        "categoria": "Ciência de Dados",
+        "descricao": "Plataforma de dados marítimos com boias, territórios e infraestrutura portuária.",
+        "detalhes": "Repositório de dados marítimos padronizados incluindo informações sobre boias, territórios marítimos, capitanias portuárias, dutos submarinos e outras infraestruturas relevantes.",
+        "tecnologias": ["Python", "GeoPandas", "PostgreSQL", "QGIS"],
+        "icon": "fas fa-database",
+        "link": "https://github.com/Jarianesantos/maritime",
+        "funcionalidades": ["Dados geoespaciais", "Análise territorial", "Visualização de mapas", "Exportação de dados"]
     }
 ]
 
